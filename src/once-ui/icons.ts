@@ -1,4 +1,4 @@
-import { IconType } from "react-icons";
+import { IconType } from 'react-icons'
 
 import {
   HiChevronUp,
@@ -29,13 +29,22 @@ import {
   HiOutlineShieldCheck,
   HiOutlineSparkles,
   HiOutlineComputerDesktop,
-} from "react-icons/hi2";
+  HiArrowRight,
+  HiEnvelope,
+  HiMiniGlobeAsiaAustralia,
+  HiArrowTopRightOnSquare,
+} from 'react-icons/hi2'
+import {
+  PiBookBookmarkDuotone,
+  PiGridFourDuotone,
+  PiHouseDuotone,
+  PiImageDuotone,
+} from 'react-icons/pi'
+import { RiVisaLine } from 'react-icons/ri'
 
-import { RiVisaLine } from "react-icons/ri";
+import { FaDiscord, FaGithub, FaGoogle, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 
-import { FaDiscord, FaGithub, FaGoogle } from "react-icons/fa6";
-
-import { LuChevronsLeftRight } from "react-icons/lu";
+import { LuChevronsLeftRight } from 'react-icons/lu'
 
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
@@ -70,8 +79,18 @@ export const iconLibrary: Record<string, IconType> = {
   visa: RiVisaLine,
   security: HiOutlineShieldCheck,
   sparkle: HiOutlineSparkles,
-  computer: HiOutlineComputerDesktop
-};
+  computer: HiOutlineComputerDesktop,
+  arrowRight: HiArrowRight,
+  email: HiEnvelope,
+  globe: HiMiniGlobeAsiaAustralia,
+  grid: PiGridFourDuotone,
+  book: PiBookBookmarkDuotone,
+  home: PiHouseDuotone,
+  gallery: PiImageDuotone,
+  linkedin: FaLinkedin,
+  x: FaXTwitter,
+  arrowUpRightFromSquare: HiArrowTopRightOnSquare,
+}
 
-export type IconLibrary = typeof iconLibrary;
-export type IconName = keyof IconLibrary;
+export type IconLibrary = typeof iconLibrary
+export type IconName = keyof IconLibrary
