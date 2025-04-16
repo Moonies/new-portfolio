@@ -1,13 +1,11 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import {
   Heading,
   Text,
-  Button,
-  Icon,
-  InlineCode,
+  Button, InlineCode,
   Logo,
   AvatarGroup,
   PasswordInput,
@@ -15,37 +13,20 @@ import {
   Dialog,
   Line,
   LogoCloud,
-  Background,
-  useToast,
-  Card,
-  Fade,
-  DateRange,
-  IconButton,
+  Background, Fade, IconButton,
   Switch,
   Column,
-  Row,
-  StyleOverlay,
-  ThemeSwitcher,
+  Row
 } from '@/once-ui/components'
 import { ScrollToTop } from '@/once-ui/components/ScrollToTop'
 
 export default function Home() {
-  const [selectedValue, setSelectedValue] = useState('')
-  const [selectedRange, setSelectedRange] = useState<DateRange>()
+
   const [isFirstDialogOpen, setIsFirstDialogOpen] = useState(false)
   const [isSecondDialogOpen, setIsSecondDialogOpen] = useState(false)
   const [firstDialogHeight, setFirstDialogHeight] = useState<number>()
-  const { addToast } = useToast()
-  const [intro, setIntro] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [tags, setTags] = useState<string[]>(['UX / UI', 'Design systems', 'AI / ML'])
-  const [twoFA, setTwoFA] = useState(false)
 
-  const handleSelect = (value: string) => {
-    console.log('Selected option:', value)
-    setSelectedValue(value)
-  }
+  const [twoFA, setTwoFA] = useState(false)
 
   const links = [
     {
@@ -65,25 +46,8 @@ export default function Home() {
     },
   ]
 
-  const validateIntro = (value: React.ReactNode) => {
-    if (typeof value === 'string' && value.length < 10) {
-      return (
-        <Row horizontal='center' marginBottom='12' gap='8'>
-          <Icon name='errorCircle' />
-          Intro must be at least 10 characters long.
-        </Row>
-      )
-    }
-    return null
-  }
 
-  const validateLogin = () => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!regex.test(email)) {
-      return 'Email and / or password is invalid.'
-    }
-    return null
-  }
+
 
   return (
     <Column fillWidth paddingY='80' paddingX='s' horizontal='center' flex={1}>
@@ -104,64 +68,6 @@ export default function Home() {
         fillWidth
         blur={0.25}
       />
-      {/* <Row position='fixed' top='0' fillWidth horizontal='center' zIndex={3}>
-        <Row
-          data-border='rounded'
-          horizontal='space-between'
-          maxWidth='l'
-          paddingRight='64'
-          paddingLeft='32'
-          paddingY='20'
-        >
-          <Logo size='s' icon={false} href='https://once-ui.com' />
-          <Row gap='12' hide='s'>
-            <Button
-              href='https://discord.com/invite/5EyAQ4eNdS'
-              prefixIcon='discord'
-              size='s'
-              label='Discord'
-              weight='default'
-              variant='tertiary'
-            />
-            <Button
-              href='https://github.com/once-ui-system'
-              prefixIcon='github'
-              size='s'
-              label='GitHub'
-              weight='default'
-              variant='tertiary'
-            />
-            <Row position='fixed' top='20' right='20'>
-              <StyleOverlay
-                position='fixed'
-                top='8'
-                right='8'
-                style={{ height: 'calc(100vh - var(--static-space-16))' }}
-              />
-            </Row>
-          </Row>
-          <Row gap='16' show='s' horizontal='center' paddingRight='24'>
-            <IconButton
-              href='https://discord.com/invite/5EyAQ4eNdS'
-              icon='discord'
-              variant='tertiary'
-            />
-            <IconButton
-              href='https://github.com/once-ui-system/nextjs-starter'
-              icon='github'
-              variant='tertiary'
-            />
-            <Row position='fixed' top='20' right='20'>
-              <StyleOverlay
-                position='fixed'
-                top='8'
-                right='8'
-                style={{ height: 'calc(100vh - var(--static-space-16))' }}
-              />
-            </Row>
-          </Row>
-        </Row>
-      </Row> */}
       <Column
         overflow='hidden'
         as='main'

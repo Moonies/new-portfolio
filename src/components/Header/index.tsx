@@ -4,16 +4,14 @@ import { usePathname } from 'next/navigation'
 
 import { Fade, Flex, Line, Switch, ThemeSwitcher, ToggleButton } from '@/once-ui/components'
 import styles from './header.module.scss'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import i18next from '@/config/i18n'
 
 export const Header = () => {
   const pathname = usePathname()
   const [lang, _currentPath] = pathname.replace(/^\//, '').split('/')
 
-  const { i18n, t } = useTranslation('common')
-  const supportedLanguage = i18next.options.supportedLngs as string[]
+  const { i18n } = useTranslation('common')
 
   const [language, setLanguage] = useState<'en' | 'jp'>('en')
 
@@ -74,7 +72,7 @@ export const Header = () => {
               <ToggleButton
                 className='s-flex-show'
                 prefixIcon='person'
-                href='/about'
+                href={`/${i18n.language}/about`}
                 selected={pathname === `/${lang}/about`}
               />
               <ToggleButton
