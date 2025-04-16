@@ -54,7 +54,7 @@ const effects = {
 
 // default metadata
 const meta = {
-  title: "Once UI for Next.js",
+  title: "Protfolio With Onec UI",
   description:
     "An open-source design system and component library for Next.js that emphasizes easy styling and accessibility in UI development.",
 };
