@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation'
 
 import { Fade, Flex, Line, Switch, ThemeSwitcher, ToggleButton } from '@/once-ui/components'
 import styles from './header.module.scss'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export const Header = () => {
@@ -32,6 +32,10 @@ export const Header = () => {
     },
     [i18n, pathname]
   )
+
+  useEffect(() => {
+    console.log(pathname)
+  }, [pathname])
 
   return (
     <>
@@ -78,15 +82,16 @@ export const Header = () => {
               <ToggleButton
                 className='s-flex-hide'
                 prefixIcon='grid'
-                href='/work'
+                // href='/work'
+                href={`/${i18n.language}/work`}
                 label={'work'}
-                selected={pathname.startsWith('/work')}
+                selected={pathname === `/${lang}/work`}
               />
               <ToggleButton
                 className='s-flex-show'
                 prefixIcon='grid'
-                href='/work'
-                selected={pathname.startsWith('/work')}
+                href={`/${i18n.language}/work`}
+                selected={pathname === `/${lang}/work`}
               />
               <Switch
                 isChecked={language === 'en'}

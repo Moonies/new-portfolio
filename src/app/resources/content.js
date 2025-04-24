@@ -1,4 +1,4 @@
-import { InlineCode } from "@/once-ui/components";
+// import { InlineCode } from "@/once-ui/components";
 
 const person = {
   firstName: "SARUN",
@@ -8,19 +8,8 @@ const person = {
   },
   role: "FRONT-END Developer",
   avatar: "/images/avatar.jpg",
-  location: "Asia/THAI", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Thai","Japnese", "English"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
-    </>
-  ),
+  location: "Asia/Thai", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Thai", "Japnese", "English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const social = [
@@ -37,11 +26,6 @@ const social = [
     link: "https://linkedin.com/in/sarun-petchsoongsakul-b87680200",
   },
   {
-    name: "X",
-    icon: "x",
-    link: "",
-  },
-  {
     name: "Email",
     icon: "email",
     link: "mailto:sarun.petchsoongsakul@gmail.com",
@@ -52,11 +36,12 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Front-End Developer</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I`m Sarun, a Front-End Developer
+      <br /> I consistently keep an eye on emerging technology trends,
+      aiming for continuous self-improvement and striving for further accomplishments.
     </>
   ),
 };
@@ -77,11 +62,11 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I have experience in web application development. 
-        Through my previous experiences, I have been involved in numerous projects, 
-        learning techniques and best practices to create outstanding interfaces that cater to user needs. 
-        I consistently keep an eye on emerging technology trends, 
-        aiming for continuous self-improvement and striving for further accomplishments. 
+        I have experience in web application development.
+        Through my previous experiences, I have been involved in numerous projects,
+        learning techniques and best practices to create outstanding interfaces that cater to user needs.
+        I consistently keep an eye on emerging technology trends,
+        aiming for continuous self-improvement and striving for further accomplishments.
         Looking ahead, I am eager to venture into back-end development tasks as well.
       </>
     ),
@@ -99,7 +84,7 @@ const about = {
             Migrate older in-house software to current languages for easy maintenance and management
           </>,
           <>
-            Create in-house software for support another engineer team 
+            Create in-house software for support another engineer team
           </>,
         ],
         images: [
@@ -329,4 +314,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, home, about, blog, work, gallery };
