@@ -11,16 +11,26 @@ interface WorkParams {
   }
 }
 
-export async function generateStaticParams(): Promise<{ slug: string }[]> {
+export async function generateStaticParams(): Promise<{ slug: string; lang: string }[]> {
+  const languages = ['en', 'jp']
   const posts = getPosts(['src', 'app', 'content', 'work', 'projects'])
-  return posts.map(post => ({
-    slug: post.slug,
-  }))
+  // return posts.map(post => ({
+  //   slug: post.slug,
+  // }))
+  const paths: any = []
+
+  posts.forEach(post => {
+    languages.forEach(lang => {
+      paths.push({ slug: post.slug, lang })
+    })
+  })
+
+  return paths
 }
 
 export default async function Project({ params }: WorkParams) {
   const { slug, lang } = await params
-  const post = getPosts(['src', 'app', 'content', 'work', 'projects']).find(
+  const post = getPosts(['src', 'app', 'content', 'work', 'projects', `${lang}`]).find(
     post => post.slug === slug
   )
 
@@ -43,7 +53,7 @@ export default async function Project({ params }: WorkParams) {
           size='s'
           prefixIcon='chevronLeft'
         >
-          Projects
+          {lang === 'en' ? 'Projects' : '戻る'}
         </Button>
         <Heading variant='display-strong-s'>{post.metadata.title}</Heading>
       </Column>

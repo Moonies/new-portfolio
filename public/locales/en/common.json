@@ -1,4 +1,10 @@
 {
   "welcome": "Welcome",
-  "description": "This is a sample application"
+  "description": "This is a sample application",
+  "button": {
+    "about": "about",
+    "work": "work",
+    "readMore": "Read case study",
+    "viewProject": "View project"
+  }
 }

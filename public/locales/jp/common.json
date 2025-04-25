@@ -1,4 +1,10 @@
 {
   "welcome": "ようこそ！！",
-  "description": "This is a sample application"
+  "description": "This is a sample application",
+  "button": {
+    "about": "私について",
+    "work": "職歴",
+    "readMore": "事例紹介を読む",
+    "viewProject": "プロジェクトの表示"
+  }
 }

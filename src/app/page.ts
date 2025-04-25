@@ -15,5 +15,5 @@ export default function DefaultPage() {
       redirect('/en')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lang])
+  }, [])
 }

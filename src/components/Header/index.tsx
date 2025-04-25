@@ -1,40 +1,45 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
+import { redirect, usePathname } from 'next/navigation'
 
 import { Fade, Flex, Line, Switch, ThemeSwitcher, ToggleButton } from '@/once-ui/components'
 import styles from './header.module.scss'
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import i18next from '@/config/i18n'
+import { useRouter } from 'next/navigation'
 
 export const Header = () => {
   const pathname = usePathname()
   const [lang, _currentPath] = pathname.replace(/^\//, '').split('/')
-
-  const { i18n } = useTranslation('common')
+  const supportedLanguage = i18next.options.supportedLngs as string[]
+  const router = useRouter()
+  const { i18n, t } = useTranslation('common')
 
   const [language, setLanguage] = useState<'en' | 'jp'>('en')
 
   const handleSwitchLanguage = useCallback(
     async (language: string) => {
       const newLanguage = language === 'en' ? 'jp' : 'en'
-      // console.log(language === 'en' ? 'jp' : 'en')
       setLanguage(newLanguage)
       await i18n.changeLanguage(newLanguage)
       const pathWithoutLang = pathname.split('/').slice(2).join('/')
-      console.log(pathWithoutLang)
-      if (pathWithoutLang) {
-        window.history.replaceState({ lang: newLanguage }, '', `/${newLanguage}/${pathWithoutLang}`)
-      } else {
-        window.history.replaceState({ lang: newLanguage }, '', `/${newLanguage}`)
-      }
+      const newPath = pathWithoutLang ? `/${newLanguage}/${pathWithoutLang}` : `/${newLanguage}`
+      router.push(newPath)
+
       // Update the URL with the new language
     },
-    [i18n, pathname]
+    [i18n, pathname, router]
   )
 
   useEffect(() => {
-    console.log(pathname)
+    if (supportedLanguage?.includes(lang)) {
+      setLanguage(lang as 'en' | 'jp')
+      i18n.changeLanguage(lang)
+    } else {
+      redirect('/en')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
   return (
@@ -70,7 +75,7 @@ export const Header = () => {
                 className='s-flex-hide'
                 prefixIcon='person'
                 href={`/${i18n.language}/about`}
-                label={'about'}
+                label={t('button.about')}
                 selected={pathname === `/${lang}/about`}
               />
               <ToggleButton
@@ -82,16 +87,16 @@ export const Header = () => {
               <ToggleButton
                 className='s-flex-hide'
                 prefixIcon='grid'
-                // href='/work'
                 href={`/${i18n.language}/work`}
-                label={'work'}
-                selected={pathname === `/${lang}/work`}
+                label={t('button.work')}
+                selected={pathname.includes(`/${lang}/work`)}
               />
               <ToggleButton
                 className='s-flex-show'
                 prefixIcon='grid'
                 href={`/${i18n.language}/work`}
-                selected={pathname === `/${lang}/work`}
+                // selected={pathname === `/${lang}/work`}
+                selected={pathname.includes(`/${lang}/work`)}
               />
               <Switch
                 isChecked={language === 'en'}

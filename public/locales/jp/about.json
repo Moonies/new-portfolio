@@ -1,0 +1,85 @@
+{
+  "label": "プロフィール",
+  "title": "私について",
+  "intro": {
+    "title": "はじめに",
+    "description": "Webやアプリケーション開発の経験があります。 これまでの経験を通して、数多くのプロジェクトに携わり、ユーザーのニーズに応える優れたインターフェースを構築するための技術やベストプラクティスを習得してきました。 常に新しい技術トレンドに注目し、継続的な自己研鑽と更なる成果の追求に努めています。今後は、バックエンド開発にも積極的に取り組んでいきたいと考えています。"
+  },
+  "work": {
+    "title": "職歴",
+    "experiences": {
+      "company1": {
+        "name": "3BROADBAND",
+        "timeframe": "2016 - 2019",
+        "role": "ジュニアフロントエンド開発者",
+        "achievements": ["社内ソフトウェアを基本的な HTML から Angular JS に移行する"]
+      },
+      "company2": {
+        "name": "Ayudhya Development Leasing Co.,Ltd.",
+        "timeframe": "2019 - 2020",
+        "role": "フロントエンド開発者 (契約社員)",
+        "achievements": [
+          "社内ソフトウェアを基本的な HTML から Angular JS に移行する",
+          "バックオフィスのワークフローを再設計する"
+        ]
+      },
+      "company3": {
+        "name": "Thai Credit Retail Bank",
+        "timeframe": "2020 - 2022",
+        "role": "サポート技術上級部門",
+        "achievements": ["顧客情報管理システムの構築ー管理", "銀行のアプリ(電子決済アプリ)"]
+      },
+      "company4": {
+        "name": "株式会社さんせん清水",
+        "timeframe": "2024 - Present",
+        "role": "AI・IT システム開発",
+        "achievements": [
+          "社内の古いソフトウェアを現在の言語に移行し。",
+          "他のエンジニアチームをサポートするための社内ソフトウェアを作成する"
+        ]
+      }
+    }
+  },
+  "studies": {
+    "title": "学歴",
+    "institutions": {
+      "study1": {
+        "name": "KING MONKUT’S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK",
+        "description": "情報技術"
+      },
+      "study2": {
+        "name": "京都民際日本語学校",
+        "description": "日本語学校"
+      }
+    }
+  },
+  "technical": {
+    "title": "技術スキル",
+    "skill": {
+      "skill1": {
+        "title": "Figma",
+        "description": "不自然な速度でOnce UIを使用してFigmaでプロトタイプを作成できます。"
+      },
+      "skill2": {
+        "title": "Miro",
+        "description": "開発チーム内でビジネスフローを必ず実施し、エンドユーザーと友好な関係を築いてください。"
+      },
+      "skill3": {
+        "title": "Next.Js",
+        "description": "Next.js は、SSR、SSG、API ルート、簡単なルーティングを備えた、高速で SEO フレンドリーなアプリのための React フレームワークです。"
+      },
+      "skill4": {
+        "title": "Angular",
+        "description": "TypeScript を使用して大規模なシングルページ Web アプリケーションを構築するための Google のフレームワーク。"
+      },
+      "skill5": {
+        "title": "React Native",
+        "description": "React を使用して iOS および Android 用のネイティブ モバイル アプリを構築するためのフレームワーク。"
+      },
+      "skill6": {
+        "title": "TypeScript",
+        "description": "コードの品質と保守性を強化する JavaScript の型付きスーパーセット。"
+      }
+    }
+  }
+}

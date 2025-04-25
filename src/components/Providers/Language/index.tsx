@@ -9,6 +9,5 @@ type LanguageProviderProps = {
 } & PropsWithChildren
 
 export default function LanguageProvider({ children, locale }: LanguageProviderProps) {
-
   return <I18nextProvider i18n={i18next}>{children}</I18nextProvider>
 }

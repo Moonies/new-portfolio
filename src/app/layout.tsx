@@ -55,9 +55,9 @@ export default function RootLayout({
 }>) {
   return (
     <Flex
-      as="html"
-      lang="en"
-      background="page"
+      as='html'
+      lang='en'
+      background='page'
       data-neutral={style.neutral}
       data-brand={style.brand}
       data-accent={style.accent}
@@ -69,44 +69,41 @@ export default function RootLayout({
       data-transition={style.transition}
       className={classNames(
         primary.variable,
-        secondary ? secondary.variable : "",
-        tertiary ? tertiary.variable : "",
-        code.variable,
+        secondary ? secondary.variable : '',
+        tertiary ? tertiary.variable : '',
+        code.variable
       )}
     >
-
-
       <ThemeProvider>
         <LanguageProvider>
           <ToastProvider>
-            <Background
-              position="absolute"
-              mask={{
-                cursor: true
-              }}
-              gradient={{
-                colorEnd: 'static-transparent',
-                colorStart: 'accent-solid-medium',
-                display: true,
-                height: 100,
-                opacity: 50,
-                tilt: 0,
-                width: 100,
-              }}
-
-            />
-            <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
+            <Column style={{ minHeight: '100vh' }} as='body' fillWidth margin='0' padding='0'>
+              <Background
+                position='absolute'
+                mask={{
+                  cursor: true,
+                }}
+                gradient={{
+                  colorEnd: 'static-transparent',
+                  colorStart: 'accent-solid-medium',
+                  display: true,
+                  height: 100,
+                  opacity: 50,
+                  tilt: 0,
+                  width: 100,
+                }}
+              />
               <Header />
               <Flex
-                position="relative"
+                position='relative'
                 zIndex={0}
                 fillWidth
-                paddingY="l"
-                paddingX="l"
-                horizontal="center"
+                paddingY='l'
+                paddingX='l'
+                horizontal='center'
                 flex={1}
               >
-                <Flex horizontal="center" fillWidth minHeight="0">
+                <Flex horizontal='center' fillWidth minHeight='0'>
                   {children}
                 </Flex>
               </Flex>

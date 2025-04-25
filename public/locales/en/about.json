@@ -1,0 +1,88 @@
+{
+  "label": "About",
+  "title": "About me",
+  "intro": {
+    "title": "Introduction",
+    "description": "I have experience in web application development. Through my previous experiences, I have been involved in numerous projects, learning techniques and best practices to create outstanding interfaces that cater to user needs. I consistently keep an eye on emerging technology trends, aiming for continuous self-improvement and striving for further accomplishments. Looking ahead, I am eager to venture into back-end development tasks as well."
+  },
+  "work": {
+    "title": "Work Experience",
+    "experiences": {
+      "company1": {
+        "name": "3BROADBAND",
+        "timeframe": "2016 - 2019",
+        "role": "Junior Front-End Developer",
+        "achievements": ["Migrate in-house software from basic html to angular JS"]
+      },
+      "company2": {
+        "name": "Ayudhya Development Leasing Co.,Ltd.",
+        "timeframe": "2019 - 2020",
+        "role": "Front-End Developer (Contarct)",
+        "achievements": [
+          "Migrate in-house software from basic html to angular JS",
+          "Redesign BackOffice workflow"
+        ]
+      },
+      "company3": {
+        "name": "Thai Credit Retail Bank",
+        "timeframe": "2020 - 2022",
+        "role": "Assistant Maneger Front-End Develop team",
+        "achievements": [
+          "Migrate in-house software and add new feature to use AWS cloud",
+          "Create Mobile Bank Application"
+        ]
+      },
+      "company4": {
+        "name": "株式会社さんせん清水",
+        "timeframe": "2024 - Present",
+        "role": "Front-End and System Engineer",
+        "achievements": [
+          "Migrate older in-house software to current languages for friendly maintenance and management",
+          "Create in-house software for support another engineer team"
+        ]
+      }
+    }
+  },
+  "studies": {
+    "title": "Studies",
+    "institutions": {
+      "study1": {
+        "name": "KING MONKUT’S UNIVERSITY OF TECHNOLOGY NORTH BANGKOK",
+        "description": "Studied Information Technology."
+      },
+      "study2": {
+        "name": "京都民際日本語学校",
+        "description": "Studied Japnese languages."
+      }
+    }
+  },
+  "technical": {
+    "title": "Technical skills",
+    "skill": {
+      "skill1": {
+        "title": "Figma",
+        "description": "Able to prototype in Figma with Once UI with unnatural speed."
+      },
+      "skill2": {
+        "title": "Miro",
+        "description": "Make sure to Business Flow in develop team and Friendly with end user."
+      },
+      "skill3": {
+        "title": "Next.Js",
+        "description": "Next.js is a React framework for fast, SEO-friendly apps with SSR, SSG, API routes, and easy routing."
+      },
+      "skill4": {
+        "title": "Angular",
+        "description": "A framework by Google for building large-scale, single-page web applications using TypeScript."
+      },
+      "skill5": {
+        "title": "React Native",
+        "description": "A framework for building native mobile apps for iOS and Android using React."
+      },
+      "skill6": {
+        "title": "TypeScript",
+        "description": "A typed superset of JavaScript that enhances code quality and maintainability."
+      }
+    }
+  }
+}
