@@ -6,6 +6,23 @@ interface ProjectsProps {
   range?: [number, number?]
   lang: string
 }
+export async function generateStaticParams(): Promise<{ slug: string; lang: string }[]> {
+  const languages = ['en', 'jp']
+  const allPosts: { slug: string; lang: string }[] = []
+
+  // Fetch posts for each locale
+  for (const lang of languages) {
+    const posts = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
+    allPosts.push(
+      ...posts.map(post => ({
+        slug: post.slug,
+        lang: lang,
+      }))
+    )
+  }
+
+  return allPosts
+}
 
 export default function Projects({ range, lang }: ProjectsProps) {
   const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
