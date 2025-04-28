@@ -1,5 +1,5 @@
 import { Column } from '@/once-ui/components'
-import { Projects } from './components/Project'
+import Projects from './components/Project'
 
 interface PageProps {
   params: {
@@ -7,7 +7,7 @@ interface PageProps {
   }
 }
 
-export function WorkPage({ params }: PageProps) {
+export default function WorkPage({ params }: PageProps) {
   const { lang } = params
 
   return (

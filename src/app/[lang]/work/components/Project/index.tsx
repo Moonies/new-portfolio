@@ -7,7 +7,7 @@ interface ProjectsProps {
   lang: string
 }
 
-export async function Projects({ range, lang }: ProjectsProps) {
+export default function Projects({ range, lang }: ProjectsProps) {
   const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
 
   const sortedProjects = allProjects.sort((a, b) => {
