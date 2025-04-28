@@ -11,6 +11,9 @@ export default async function Projects(param: ProjectsProps) {
   // const { lang } = await param
   const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', 'en'])
 
+  if (!allProjects.length) {
+    return <div>No projects found.</div>
+  }
   // const sortedProjects = allProjects.sort((a, b) => {
   //   return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
   // })

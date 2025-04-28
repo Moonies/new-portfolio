@@ -1,5 +1,5 @@
 import { Column } from '@/once-ui/components'
-import Projects from './components/Project'
+import Projects from './components/ProjectList'
 
 interface PageProps {
   params: {
