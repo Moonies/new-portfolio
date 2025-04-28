@@ -24,8 +24,9 @@ export async function generateStaticParams(): Promise<{ slug: string; lang: stri
   return allPosts
 }
 
-export default function Projects({ range, lang }: ProjectsProps) {
-  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
+export default async function Projects(param: ProjectsProps) {
+  const { lang } = await param
+  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', `${lang}`])
 
   // const sortedProjects = allProjects.sort((a, b) => {
   //   return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()

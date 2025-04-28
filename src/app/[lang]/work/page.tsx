@@ -1,5 +1,5 @@
 import { Column } from '@/once-ui/components'
-// import Projects from './components/Project'
+import Projects from './components/Project'
 
 interface PageProps {
   params: {
@@ -7,12 +7,12 @@ interface PageProps {
   }
 }
 
-export default function WorkPage({ params }: PageProps) {
-  // const { lang } = params
+export default async function WorkPage({ params }: PageProps) {
+  const { lang } = await params
 
   return (
     <Column maxWidth='m'>
-      {/* <Projects lang={lang} /> */}
+      <Projects lang={lang} />
       work page
     </Column>
   )
