@@ -29,12 +29,12 @@ export async function generateStaticParams(): Promise<{ slug: string; lang: stri
   const allPosts: { slug: string; lang: string }[] = []
 
   // Fetch posts for each locale
-  for (const locale of languages) {
-    const posts = getPosts(['src', 'app', '[lang]', 'work', 'projects', locale])
+  for (const lang of languages) {
+    const posts = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
     allPosts.push(
       ...posts.map(post => ({
         slug: post.slug,
-        lang: locale,
+        lang: lang,
       }))
     )
   }
