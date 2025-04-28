@@ -9,11 +9,11 @@ interface ProjectsProps {
 
 export default async function Projects() {
   // const { lang } = await param
-  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', 'en'])
-  console.log(allProjects)
-  if (!allProjects.length) {
-    return <div>No projects found.</div>
-  }
+  // const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', 'en'])
+  // console.log(allProjects)
+  // if (!allProjects.length) {
+  //   return <div>No projects found.</div>
+  // }
   // const sortedProjects = allProjects.sort((a, b) => {
   //   return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
   // })
