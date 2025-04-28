@@ -13,19 +13,33 @@ interface WorkParams {
 
 export async function generateStaticParams(): Promise<{ slug: string; lang: string }[]> {
   const languages = ['en', 'jp']
-  const posts = getPosts(['src', 'app', '[lang]', 'work', 'projects'])
+  // const posts = getPosts(['src', 'app', '[lang]', 'work', 'projects',])
   // return posts.map(post => ({
   //   slug: post.slug,
   // }))
-  const paths: any = []
+  // const paths: any = []
 
-  posts.forEach(post => {
-    languages.forEach(lang => {
-      paths.push({ slug: post.slug, lang })
-    })
-  })
+  // posts.forEach(post => {
+  //   languages.forEach(lang => {
+  //     paths.push({ slug: post.slug, lang })
+  //   })
+  // })
 
-  return paths
+  // return paths
+  const allPosts: { slug: string; lang: string }[] = []
+
+  // Fetch posts for each locale
+  for (const locale of languages) {
+    const posts = getPosts(['src', 'app', '[lang]', 'work', 'projects', locale])
+    allPosts.push(
+      ...posts.map(post => ({
+        slug: post.slug,
+        lang: locale,
+      }))
+    )
+  }
+
+  return allPosts
 }
 
 export default async function Project({ params }: WorkParams) {
