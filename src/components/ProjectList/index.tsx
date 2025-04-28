@@ -7,9 +7,9 @@ interface ProjectsProps {
   lang: string
 }
 
-export default async function Projects(param: ProjectsProps) {
-  const { lang } = await param
-  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
+export default async function Projects() {
+  // const { lang } = await param
+  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', 'en'])
   console.log(allProjects)
   if (!allProjects.length) {
     return <div>No projects found.</div>
