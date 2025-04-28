@@ -1,5 +1,5 @@
 import mdx from '@next/mdx'
-import { i18n } from 'next-i18next'
+// import { i18n } from 'next-i18next'
 const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {},
@@ -13,12 +13,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  sassOptions: {
-    compiler: 'modern',
-    silenceDeprecations: ['legacy-js-api'],
-  },
-  i18n,
-  // output: 'standalone',
+  // i18n,
   transpilePackages: ['next-mdx-remote'], //for fix latest version
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 }
