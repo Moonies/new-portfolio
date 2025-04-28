@@ -13,7 +13,6 @@ export default async function WorkPage({ params }: PageProps) {
   return (
     <Column maxWidth='m'>
       <Projects lang={lang} />
-      work page
     </Column>
   )
 }
