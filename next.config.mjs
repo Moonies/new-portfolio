@@ -18,7 +18,7 @@ const nextConfig = {
     silenceDeprecations: ['legacy-js-api'],
   },
   i18n,
-  output: 'standalone',
+  // output: 'standalone',
   transpilePackages: ['next-mdx-remote'], //for fix latest version
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 }

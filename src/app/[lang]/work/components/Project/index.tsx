@@ -8,7 +8,7 @@ interface ProjectsProps {
 }
 
 export async function Projects({ range, lang }: ProjectsProps) {
-  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', await lang])
+  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
 
   const sortedProjects = allProjects.sort((a, b) => {
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
