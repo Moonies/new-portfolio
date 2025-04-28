@@ -8,7 +8,7 @@ interface ProjectsProps {
 }
 
 export function Projects({ range, lang }: ProjectsProps) {
-  const allProjects = getPosts(['src', 'app', 'content', 'work', 'projects', `${lang}`])
+  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', `${lang}`])
 
   const sortedProjects = allProjects.sort((a, b) => {
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()

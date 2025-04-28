@@ -13,7 +13,7 @@ interface WorkParams {
 
 export async function generateStaticParams(): Promise<{ slug: string; lang: string }[]> {
   const languages = ['en', 'jp']
-  const posts = getPosts(['src', 'app', 'content', 'work', 'projects'])
+  const posts = getPosts(['src', 'app', '[lang]', 'work', 'projects'])
   // return posts.map(post => ({
   //   slug: post.slug,
   // }))
@@ -30,7 +30,7 @@ export async function generateStaticParams(): Promise<{ slug: string; lang: stri
 
 export default async function Project({ params }: WorkParams) {
   const { slug, lang } = await params
-  const post = getPosts(['src', 'app', 'content', 'work', 'projects', `${lang}`]).find(
+  const post = getPosts(['src', 'app', '[lang]', 'work', 'projects', `${lang}`]).find(
     post => post.slug === slug
   )
 
