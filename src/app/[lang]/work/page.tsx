@@ -7,8 +7,8 @@ interface PageProps {
   }
 }
 
-export default async function WorkPage({ params }: PageProps) {
-  const { lang } = await params
+export function WorkPage({ params }: PageProps) {
+  const { lang } = params
 
   return (
     <Column maxWidth='m'>
