@@ -7,12 +7,12 @@ interface PageProps {
   }
 }
 
-export default function Work() {
-  // const { lang } = await params
+export default async function WorkPage({ params }: PageProps) {
+  const { lang } = await params
 
   return (
     <Column maxWidth='m'>
-      <ProjectList />
+      <ProjectList lang={lang} />
     </Column>
   )
 }
