@@ -13,10 +13,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  i18n: {
-    locales: ['en', 'jp'],
-    defaultLocale: 'en',
-  },
   transpilePackages: ['next-mdx-remote'], //for fix latest version
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 }
