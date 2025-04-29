@@ -7,13 +7,13 @@ interface ProjectsProps {
   lang: string
 }
 
-export default async function Projects() {
-  // const { lang } = await param
-  // const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', 'en'])
-  // console.log(allProjects)
-  // if (!allProjects.length) {
-  //   return <div>No projects found.</div>
-  // }
+export default async function Projects(param: ProjectsProps) {
+  const { lang } = await param
+  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
+  console.log(allProjects)
+  if (!allProjects.length) {
+    return <div>No projects found.</div>
+  }
   // const sortedProjects = allProjects.sort((a, b) => {
   //   return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
   // })
@@ -23,7 +23,7 @@ export default async function Projects() {
   //   : sortedProjects
   return (
     <Column fillWidth gap='xl' marginBottom='40' paddingX='l'>
-      {/* {allProjects.map((post, index) => (
+      {allProjects.map((post, index) => (
         <ProjectCard
           priority={index < 2}
           key={post.slug}
@@ -35,8 +35,7 @@ export default async function Projects() {
           avatars={post.metadata.team?.map(member => ({ src: member.avatar })) || []}
           link={post.metadata.link || ''}
         />
-      ))} */}
-      Project Card
+      ))}
     </Column>
   )
 }
