@@ -4,7 +4,7 @@ import { ProjectCard } from '@/components/ProjectCard'
 
 interface ProjectsProps {
   range?: [number, number?]
-  lang: string
+  // lang: string
 }
 
 export async function generateStaticParams(): Promise<{ slug: string; lang: string }[]> {
@@ -26,8 +26,8 @@ export async function generateStaticParams(): Promise<{ slug: string; lang: stri
 }
 
 export default async function Projects(param: ProjectsProps) {
-  const { lang } = await param
-  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
+  // const { lang } = await param
+  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', 'en'])
   console.log(allProjects)
   if (!allProjects.length) {
     return <div>No projects found.</div>
