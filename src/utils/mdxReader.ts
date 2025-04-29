@@ -67,9 +67,6 @@ function getMDXData(dir: string) {
 }
 
 export function getPosts(customPath = ['', '', '', '']) {
-  // const postsDir = path.join(process.cwd(), ...customPath)
-  const lang = 'en'
-  const postsDir = path.join(process.cwd(), 'src', 'app', '[lang]', 'work', 'projects', lang) // for test
-
+  const postsDir = path.join(process.cwd(), ...customPath)
   return getMDXData(postsDir)
 }

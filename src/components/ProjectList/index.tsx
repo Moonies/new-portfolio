@@ -4,18 +4,15 @@ import { ProjectCard } from '@/components/ProjectCard'
 
 interface ProjectsProps {
   range?: [number, number?]
-  lang: string
+  // lang: string
 }
 
 export const dynamicParams = true
 
 export default async function Projects(param: ProjectsProps) {
-  const { lang } = await param
-  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', `${lang}`])
-  console.log(allProjects)
-  if (!allProjects.length) {
-    return <div>No projects found.</div>
-  }
+  // const { lang } = await param
+  const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', `en`])
+
   // const sortedProjects = allProjects.sort((a, b) => {
   //   return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
   // })
