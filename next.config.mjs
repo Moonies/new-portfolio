@@ -2,7 +2,10 @@ import mdx from '@next/mdx'
 // import { i18n } from 'next-i18next'
 const withMDX = mdx({
   extension: /\.mdx?$/,
-  options: {},
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
 })
 
 /** @type {import('next').NextConfig} */
