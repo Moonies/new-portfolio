@@ -14,4 +14,4 @@ New Protfolio with Once UI
 
 - migrate from tailwind
 - migrate from pure react TS to NextJS (TS)
-- migrate from react-i18n to next-i18next (Support pages route)
+- migrate from react-i18n to next-i18next (Support APP Router)
