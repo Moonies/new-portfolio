@@ -1,19 +1,28 @@
 import { getPosts } from '@/utils/mdxReader'
 import { Column } from '@/once-ui/components'
 import { ProjectCard } from '@/components/ProjectCard'
-
+import { work } from '@/app/resources/content'
+import { Meta } from '@/once-ui/modules'
+import { baseURL } from '@/app/resources/config'
 interface ProjectsProps {
   range?: [number, number?]
   lang: string
 }
 
+export async function generateMetadata() {
+  return Meta.generate({
+    title: work.title,
+    description: work.description,
+    baseURL: baseURL,
+    image: `${baseURL}/og?title=${encodeURIComponent(work.title)}`,
+    // path: work.path,
+  })
+}
+
 export default async function Projects(param: ProjectsProps) {
   const { lang } = await param
   const allProjects = getPosts(['src', 'app', '[lang]', 'work', 'projects', lang])
-  console.log(allProjects)
-  if (!allProjects.length) {
-    return <div>No projects found.</div>
-  }
+
   // const sortedProjects = allProjects.sort((a, b) => {
   //   return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime()
   // })
