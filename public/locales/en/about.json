@@ -34,12 +34,17 @@
       },
       "company4": {
         "name": "株式会社さんせん清水",
-        "timeframe": "2024 - Present",
+        "timeframe": "2024 - 2025",
         "role": "Front-End and System Engineer",
         "achievements": [
           "Migrate older in-house software to current languages for friendly maintenance and management",
           "Create in-house software for support another engineer team"
         ]
+      },
+      "company5": {
+        "name": "小山株式会社",
+        "timeframe": "2025 - Present",
+        "role": "Developer"
       }
     }
   },
