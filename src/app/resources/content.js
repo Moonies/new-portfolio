@@ -69,6 +69,13 @@ const about = t => {
       title: t('work.title'),
       experiences: [
         {
+          company: t('work.experiences.company5.name'),
+          timeframe: t('work.experiences.company5.timeframe'),
+          role: t('work.experiences.company5.role'),
+          achievements: [],
+          images: [],
+        },
+        {
           company: t('work.experiences.company4.name'),
           timeframe: t('work.experiences.company4.timeframe'),
           role: t('work.experiences.company4.role'),
